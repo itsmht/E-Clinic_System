@@ -1,0 +1,36 @@
+{
+    "Blood": [
+        {
+            "name": "Tanvir Ahmed",
+            "gender": "Male",
+            "bloodGroup": "B(+ev)",
+            "dob": "1999-11-04",
+            "address": "mirpur",
+            "email": "astro.tanvir@gmail.com"
+        },
+        {
+            "name": "Talha ",
+            "gender": "Male",
+            "bloodGroup": "O(+ev)",
+            "dob": "1999-11-07",
+            "address": "Demra",
+            "email": "talha@gmail.com"
+        },
+        {
+            "name": "Tanvir Rahman",
+            "gender": "Male",
+            "bloodGroup": "A(+ev)",
+            "dob": "2021-10-28",
+            "address": "Bagura",
+            "email": "tanvir@gmail.com"
+        },
+        {
+            "name": "Niloy",
+            "gender": "Male",
+            "bloodGroup": "B(+ev)",
+            "dob": "2021-10-28",
+            "address": "Basundhora",
+            "email": "niloy@gmail.com"
+        }
+    ]
+}

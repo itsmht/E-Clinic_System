@@ -60,28 +60,22 @@ session_start();
       echo "  <table>
 	  <tr>
         <th>UserName</th>
-        <td> $Uname </td>
-    </tr>
-      <tr>
         <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Date of Birth</th>
+        
+    </tr>
+    <tr>
+        <td> $Uname </td>
         <td> $name </td>
+        <td> $email </td>
+        <td> $gender</td>
+        <td> $address </td>
+        <td> $dob </td>
     </tr>
-    <tr>
-      <th>Email</th>
-      <td> $email </td>
-    </tr>
-    <tr>
-      <th>Gender</th>
-      <td> $gender</td>
-    </tr>
-    <tr>
-      <th>Address</th>
-      <td> $address </td>
-    </tr>
-    <tr>
-      <th>Date of Birth</th>
-      <td> $dob </td>
-    </tr>
+    
     </table>";
 
       break;
