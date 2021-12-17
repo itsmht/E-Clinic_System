@@ -43,19 +43,20 @@ session_start();
     <span class="err-msg2"> <?php echo $emailErr; ?></span>
     <!-- <br><br> -->
     <label for="">Password:</label>
-    <input type="password" name="pass" value="<?php echo $vpass; ?>>
+    <input type="password" name="pass" value="<?php echo $vpass; ?>">
     <span class=" err-msg2"> <?php echo $passErr; ?></span>
     <!-- <br><br> -->
     <label for="">Address:</label>
-    <input type="text" name="address" value="<?php echo $vaddress; ?>>
+    <input type="text" name="address" value="<?php echo $vaddress; ?>">
     <span class=" err-msg2"> <?php echo $addressErr; ?></span>
     <!-- <br><br> -->
     <label for="">Date of Birth:</label>
-    <input type="date" name="dob">
-    <span class="err-msg2"> <?php echo $dobErr; ?></span>
+    <input type="date" name="dob" value="<?php echo $vdob; ?>">
+    <span class=" err-msg2"> <?php echo $dobErr; ?></span>
     <!-- <br><br> -->
     <label for=""> Gender:</label>
     <div>
+
       <input class="radio" type="radio" name="gender" value="female">Female
       <input class="radio" type="radio" name="gender" value="male">Male
       <input class="radio" type="radio" name="gender" value="other">Other

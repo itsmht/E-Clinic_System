@@ -75,9 +75,10 @@
       echo "OK";
     }
 
-    $sql = "INSERT INTO patient ( Name, Email, Password, Address, DOB, Gender) VALUES ('$name','$email','$pass','$address','$dob','$gender')";
-
+    $sql = "UPDATE patient SET  Name='$name', Email='$email', Password='$pass', Address='$address', DOB='$dob', Gender='$gender' WHERE Name = '$sname' LIMIT 1";
+    $_SESSION["name"] = $name;
     $result = $conn->query($sql);
+    header("Location:profile.php");
     echo $sql;
 
     $conn->close();

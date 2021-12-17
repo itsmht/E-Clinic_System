@@ -27,6 +27,5 @@ $sname = $_SESSION["name"];
   $vaddress = $row["Address"];
   $vpass = $row["Password"];
 
-
       
       ?>
