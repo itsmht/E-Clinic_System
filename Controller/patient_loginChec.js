@@ -38,4 +38,4 @@ button.addEventListener('click', (e) => {
   }
 });
 
-function validate() {}
+function validate() { }

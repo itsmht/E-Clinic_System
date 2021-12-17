@@ -57,7 +57,7 @@ session_start();
       </table>
     </div>
   </form>
-
+  <script src="../Controller/admin_login_check.js"></script>
 
 </body>
 
