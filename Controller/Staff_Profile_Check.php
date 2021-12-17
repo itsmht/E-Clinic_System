@@ -1,11 +1,11 @@
 <?php
 $name = $email = $dob = $pass = $gender =  "";
-$sname = $_SESSION["name"];
+$semail = $_SESSION["email"];
 //  DatabaseMySQL
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "test";
+  $dbname = "e-clinic";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,15 +14,17 @@ $sname = $_SESSION["name"];
     die("Connection failed: " . $conn->connect_error);
   } 
 
-  $sql = "SELECT  * FROM patient WHERE Name = '$sname'";
+  $sql = "SELECT  * FROM staff WHERE email = '$semail'";
 
   $result = $conn->query($sql);
 
   $row = $result->fetch_assoc();
-  // var_dump($row);
-  $name = $row["Name"];
-  $gender = $row["Gender"];
-  $dob = $row["DOB"];
-  $email = $row["Email"];
-  $address = $row["Address"];
+  //var_dump($row);
+  
+   $name = $row["name"];
+   $email = $row["email"];
+   $dob = $row["dob"];
+   $gender = $row["gender"];
+   
+   
   ?>

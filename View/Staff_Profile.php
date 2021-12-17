@@ -148,31 +148,35 @@ require '../Controller/Staff_Profile_Check.php';
 
 ?>
 
+
   <div class="container">
     <form>
       <h1>Profile</h1>
       <?php
-      $data = file_get_contents("../Model/StaffData.json");
-      $data = json_decode($data, true);
-      $flag = 0;
+      require '../Controller/Staff_Profile_Check.php';
+      
+      // $data = file_get_contents("../Model/StaffData.json");
+      // $data = json_decode($data, true);
+      // $flag = 0;
 
-      foreach ($data as $row) {
-        if ($row["email"] == $_SESSION["email"]) {
-          $name = $row["name"];
-          $email = $row["email"];
-          $gender = $row["gender"];
-          $dob = $row["dob"];
+      // foreach ($data as $row) {
+      //   if ($row["email"] == $_SESSION["email"]) {
+      //     $name = $row["name"];
+      //     $email = $row["email"];
+      //     $gender = $row["gender"];
+      //     $dob = $row["dob"];
 
           echo "<h3>Name: $name </h3>";
           echo "<h3>Email: $email </h3>";
           echo "<h3>Gender: $gender </h3>";
           echo "<h3>Date Of Birth: $dob </h3>";
 
-          break;
-        } else {
-          $flag = 1;
-        }
-      }
+          //break;
+        //} 
+        // else {
+        //   $flag = 1;
+        // }
+      //}
       ?>
   </div>
   </form>
