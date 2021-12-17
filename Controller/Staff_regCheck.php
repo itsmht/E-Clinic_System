@@ -23,7 +23,7 @@
     if (empty($_POST["pass"])) {
       $passErr = "password is required";
     } else {
-      $password = $_POST["pass"];
+      $pass = $_POST["pass"];
     }
 
 
@@ -36,13 +36,13 @@
 
 
 
-  if ($name != "" and $email!= "" and $password != "" and $gender != "") {
+  if ($name != "" and $email!= "" and $pass != "" and $gender != "") {
     $jsonData = file_get_contents('../Model/StaffData.json');
     $array_data = json_decode($jsonData, true);
     $input = array(
       'name'               =>     $name,
       'email'          =>    $email,
-      'password'     =>     $password,
+      'password'     =>     $pass,
       'dob'          => $dob,
       'gender'     =>     $gender,
 
@@ -51,9 +51,27 @@
     $array_data[] = $input;
     $final_data = json_encode($array_data);
     file_put_contents('../Model/StaffData.json', $final_data);
-    header("Location:Staff_login.php");
-    echo $final_data;
+    //header("Location:Staff_login.php");
+    //echo $final_data;
   }
+  // DatabaseMySQL
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "e-clinic";
 
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  } 
+
+  $sql = "INSERT INTO staff ( name, email,dob, password, gender) VALUES ('$name','$email','$dob','$pass','$gender')";
+
+  $result = $conn->query($sql);
+
+
+  $conn->close();
 
   ?>
