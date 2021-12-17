@@ -12,7 +12,7 @@ session_start();
 </head>
 
 <body>
-  <h1 >E-Clinic System</h1><br>
+  <h1  style= "text-align: center">E-Clinic System</h1><br>
 
   <?php
   require '../Controller/Admin_loginCheck.php';

@@ -1,57 +1,61 @@
 <?php
   $UnameErr =  $passErr = "";
-  $info['Uname'] = "";
-  $info['pass'] = "";
-
+  $Uname = $pass = "";
 
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Uname"])) {
-      $emailErr = "UserName is required";
+      $UnameErr = "User name is required";
     } else {
-      $info['Uname'] = test_input($_POST["Uname"]);
+      $Uname = $_POST["Uname"];
     }
     if (empty($_POST["pass"])) {
-      $passErr = "Password is required";
+      $passErr = "pass is required";
     } else {
-      $info['pass'] = test_input($_POST["pass"]);
+      $pass = $_POST["pass"];
     }
-
-
-    $data = file_get_contents("../Model/admindata.json");
-    $data = json_decode($data, true);
-    $flag = 0;
-
-    foreach ($data as $row) {
-      if ($row["Uname"] == $info['Uname'] and  $row["pass"] == $info['pass']) {
+  }
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "e_clinic";
+    
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $dbname);
+      // Check connection
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      } 
+    
+      $sql = "SELECT  username, password FROM RegisterAdmin WHERE username = '$Uname' AND password = '$pass'";
+    
+      $result = $conn->query($sql);
+    
+    
+      $row = $result->fetch_assoc();
+    
+      if($row != NULL){
         if (isset($_POST['remember'])) {
-          setcookie("Uname", $info['Uname'], time() + (86400 * 30));
-          setcookie("pass", $info['pass'], time() + (86400 * 30));
+          setcookie("Uname", $Uname, time() + (86400 * 30));
+          setcookie("password", $pass, time() + (86400 * 30));
         }
-        $_SESSION["Uname"] = $info['Uname'];
-        $flag = 0;
-       header("Location:Admin_Dashboard.php");
-        break;
-      } else {
-        $flag = 1;
-      }
-    }
+        // echo "Loged In";
+        $_SESSION["Uname"] = $Uname;
+       
+        header("Location:Admin_Dashboard.php");
+        
+      }else{
+    
+    
+    $error = "Your Login Name or Password is invalid";
 
-    if ($flag == 1) {
-        echo "Wrong Info";
+    
       
     }
-  }
+  
 
 
 
 
 
-  function test_input($data)
-  {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-  }
   ?>

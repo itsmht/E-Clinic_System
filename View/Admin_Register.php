@@ -14,7 +14,7 @@
   require '../Controller/Admin_regCheck.php';
   ?>
 
-	<h1 >E-Clinic System Register</h1><br>
+	<h1  style= "text-align: center">E-Clinic System Register</h1><br>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 <table>
  	<tr >
