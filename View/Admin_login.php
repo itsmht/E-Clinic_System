@@ -12,7 +12,7 @@ session_start();
 </head>
 
 <body>
-  <h1>E-Clinic System</h1><br>
+  <h1 >E-Clinic System</h1><br>
 
   <?php
   require '../Controller/Admin_loginCheck.php';
@@ -22,20 +22,29 @@ session_start();
     <div>
       <table>
         <tr>
-          <td><label for="email"><b>UserName</b></label></td>
+          <td><label for="uname"><b>UserName</b></label></td>
           <td>
-
-            <input type="text" name="Uname" placeholder="Enter Your Username" required value="<?php if (isset($_COOKIE['Uname'])) {
+          <div class="form-control">
+            <input type="text"id="Uname" name="Uname" placeholder="Enter Your Username" required value="<?php if (isset($_COOKIE['Uname'])) {
                                                                                                 echo $_COOKIE['Uname'];
                                                                                               } ?>">
+                                                                                              <i class="error fas fa-exclamation-circle fa-lg"></i>
+            <i class="success fas fa-check-circle fa-lg"></i>
+            <p class="err-msg">*password is required to login</p> 
+                                                                                            </div>
           </td>
         </tr>
         <tr>
           <td><label for="pass"><b>Password</b></label></td>
           <td>
-            <input type="password" name="pass" placeholder="Enter Your Password" required value="<?php if (isset($_COOKIE['pass'])) {
+          <div class="form-control">
+            <input type="password"id="pass" name="pass" placeholder="Enter Your Password" required value="<?php if (isset($_COOKIE['pass'])) {
                                                                                                     echo $_COOKIE['pass'];
                                                                                                   } ?>">
+                                                                                                  <i class="error fas fa-exclamation-circle fa-lg"></i>
+                <i class="success fas fa-check-circle fa-lg"></i>
+                <p class="err-msg">*password is required to login</p> 
+                                                                                                </div>
           </td>
         </tr>
         <tr>

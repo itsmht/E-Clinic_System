@@ -1,11 +1,16 @@
-let username = document.getElementById('uname');
+let username = document.getElementById('Uname');
 let password = document.getElementById('pass');
 let button = document.querySelector('.btn');
 let error = document.querySelectorAll('.error');
 let err_msg = document.querySelectorAll('.err-msg');
 let success = document.querySelectorAll('.success');
 let f = 0;
-
+console.log(username);
+console.log(password);
+console.log(button);
+console.log(error);
+console.log(err_msg);
+console.log(success);
 // console.log(button);
 button.addEventListener('click', (e) => {
     // validate();
