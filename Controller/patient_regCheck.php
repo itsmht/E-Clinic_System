@@ -18,7 +18,7 @@
     if (empty($_POST["pass"])) {
       $passErr = "password is required";
     } else {
-      $password = $_POST["pass"];
+      $pass = $_POST["pass"];
     }
     if (empty($_POST["address"])) {
       $addressErr = "address is required";
@@ -39,15 +39,15 @@
     }
   }
 
+  // JSON
 
-
-  if ($name != "" and $email != "" and $password != "" and $gender != "") {
+  if ($name != "" and $email != "" and $pass != "" and $gender != "") {
     $jsonData = file_get_contents('../Model/data.json');
     $array_data = json_decode($jsonData, true);
     $input = array(
       'name'               =>     $name,
       'e-mail'          =>    $email,
-      'password'     =>     $password,
+      'password'     =>     $pass,
       'gender'     =>     $gender,
       'address'     =>     $address,
       'dob'     =>     $dob,
@@ -57,8 +57,30 @@
     $array_data[] = $input;
     $final_data = json_encode($array_data);
     file_put_contents('../Model/data.json', $final_data);
-    header("Location:login.php");
-    echo $final_data;
+    // header("Location:login.php");
+    // echo $final_data;
+
+    // DatabaseMySQL
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "test";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    } else {
+      echo "OK";
+    }
+
+    $sql = "INSERT INTO patient ( Name, Email, Password, Address, DOB, Gender) VALUES ('$name','$email','$pass','$address','$dob','$gender')";
+
+    $result = $conn->query($sql);
+    echo $sql;
+
+    $conn->close();
   }
 
 

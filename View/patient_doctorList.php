@@ -1,3 +1,26 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "test";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM doctor";
+$result = $conn->query($sql);
+
+
+$conn->close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,99 +28,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css-patient/table.css">
   <title>Document</title>
-  <style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
 
-  table,
-  td,
-  th {
-    border: 2px solid #000;
-    text-align: left;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th,
-  td {
-    padding: 16px;
-  }
-
-  .btn-info {
-    margin-left: 20px;
-  }
-
-  th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #E54754;
-    color: white;
-  }
-
-  input {
-    margin: 20px 0;
-  }
-
-  /* navbar */
-
-  li {
-    list-style: none;
-  }
-
-  nav {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 18px;
-  }
-
-  .logo img {
-    width: 80%;
-  }
-
-  .nav-link {
-    margin-left: 50px;
-    padding: 10px 25px;
-    font-size: 18px;
-    font-weight: 500;
-  }
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-  }
-
-  .btn {
-    font-size: 20px;
-    margin-left: 50px;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 500;
-  }
-
-
-  .btn.sign-up {
-    background-color: #fff;
-    outline: 2px solid #E54754;
-    padding: 10px 28px;
-  }
-  </style>
 </head>
 
 <body>
@@ -154,6 +87,14 @@
       <td>11 AM - 9 PM</td>
       <td><button>Set Appoinment</button><button class="btn-info">More Info</button></td>
     </tr>
+    <?php foreach ($result as $item) { ?>
+    <tr>
+      <td><?php echo $item['Name'] ?></td>
+      <td><?php echo $item['Expert In'] ?></td>
+      <td><?php echo $item['Time'] ?></td>
+      <td><button>Set Appoinment</button><button class="btn-info">More Info</button></td>
+    </tr>
+    <?php } ?>
   </table>
 
   <!-- <button onclick="window.print()">Print this page</button> -->
