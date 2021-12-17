@@ -7,58 +7,8 @@ session_start();
 
 <head>
   <title>E-Clinic System</title>
-  <style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  h1 {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  label {
-    padding: 15px 0 5px 0;
-  }
-
-  input {
-    padding: 5px;
-  }
-
-  .btn {
-    padding: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    background-color: #E54754;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-
-  .error {
-    color: #FF0000;
-  }
-
-  .radio {
-    margin-right: 5px;
-  }
-
-  .check-box {
-    margin: 10px 0;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    max-width: 500px;
-    height: 800px;
-    margin: auto;
-  }
-  </style>
+  <link rel="stylesheet" href="./css_admin/style1.css">
+<script src="https://kit.fontawesome.com/e8af05a135.js" crossorigin="anonymous"></script>
 </head>
 
 <body>

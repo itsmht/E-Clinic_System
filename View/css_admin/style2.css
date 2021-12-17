@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .form-control {
+    position: relative;
+    width: 100%;
+  }
+  .form-control i {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    margin-left: 5px;
+  }
+  h2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  label {
+    padding: 15px 0 5px 0;
+  }
+  
+  input {
+    padding: 5px;
+  }
+  #uname,
+  #pass {
+    width: 100%;
+  }
+  .btn {
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #e54754;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .radio {
+    margin-right: 5px;
+  }
+  
+  .check-box {
+    margin: 10px 0;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    max-width: 500px;
+    height: 800px;
+    margin: auto;
+  }
+  
+  .form-control .success {
+    display: none;
+    color: rgb(31, 194, 31);
+  }
+  
+  .form-control .error {
+    display: none;
+    color: rgb(236, 40, 40);
+  }
+  
+  .border-color {
+    border: 1px solid #f02849;
+  }
+  .err-msg2 {
+    color: #f02849;
+  }
+  
+  .err-msg {
+    display: none;
+    color: #f02849;
+    font-size: small;
+    font-weight: 400;
+    margin-top: 5px;
+  }
+  

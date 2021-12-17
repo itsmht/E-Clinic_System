@@ -4,55 +4,8 @@
 	<meta charset="utf-8">
 	<title>E-Clinic System</title>
 	<head>
-  <style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  h2 {
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  label {
-    padding: 15px 0 5px 0;
-  }
-
-  input {
-    padding: 5px;
-  }
-
-  .btn {
-    padding: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-    background-color: #E54754;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-
-  .error {
-    color: #FF0000;
-  }
-
-  .radio {
-    margin-right: 5px;
-  }
-
-
-  form {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    max-width: 500px;
-    height: 800px;
-    margin: auto;
-  }
-  </style>
+  <link rel="stylesheet" href="./css_admin/style1.css">
+  
 <!DOCTYPE html> 
 </head>
 <body>
