@@ -142,7 +142,11 @@ session_start();
 </head>
 
 <body>
+<?php
 
+require '../Controller/Staff_Profile_Check.php';
+
+?>
 
   <div class="container">
     <form>
