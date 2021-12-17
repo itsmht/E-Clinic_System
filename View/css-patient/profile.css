@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.logo img {
+  width: 80%;
+}
+
+.nav-link {
+  margin-left: 50px;
+  padding: 10px 25px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  font-size: 20px;
+  margin-left: 50px;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.btn.log-in {
+  background-color: #e54754;
+}
+
+.btn.log-in a {
+  color: #fff;
+}
+
+.btn.sign-up {
+  background-color: #fff;
+  outline: 2px solid #e54754;
+  padding: 10px 28px;
+}
+
+.btn.log-in a {
+  color: #fff;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 18px;
+  width: 400px;
+  margin: auto;
+}
+
+th {
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+button {
+  margin: 15px 2px;
+}
+
+.pro-cell {
+  height: 200px;
+  width: 500px;
+}
+
+.pro-text {
+  display: block;
+  text-align: center;
+  margin: 50px 0 20px 0;
+}
+
+.pro-image {
+  background-color: #e54754;
+  height: 120px;
+  width: 120px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.profile-section {
+  display: flex;
+  width: 85%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.card {
+  margin: 0 24px 0 24px;
+  width: 300px;
+}
+
+.card-text {
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+}
+
+img {
+  width: 100%;
+}

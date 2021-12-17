@@ -74,7 +74,7 @@
         setcookie("user_pass", $pass, time() + (86400 * 30));
       }
       // echo "Loged In";
-      $_SESSION["username"] = $name;
+      $_SESSION["name"] = $name;
      
       header("Location:profile.php");
       

@@ -7,6 +7,7 @@ session_start();
 <html>
 
 <head>
+  <link rel="stylesheet" href="./css-patient/navbar.css">
   <link rel="stylesheet" href="./css-patient/style1.css">
   <script src="https://kit.fontawesome.com/e8af05a135.js" crossorigin="anonymous"></script>
 </head>
@@ -20,7 +21,18 @@ session_start();
   
   ?>
 
-
+  <header>
+    <nav>
+      <div class="logo"><img src="./images/logo.png" alt=""></div>
+      <ul>
+        <li class="nav-link"><a href="index.php">Home</a></li>
+        <li class="nav-link"><a href="">About</a></li>
+        <li class="nav-link"><a href="">Contact</a></li>
+        <li><button class="btn sign-up"><a href="./all_signUp.php">Sign Up</a></button></li>
+        <li><button class="btn log-in"><a href="./all_login.php">Login</a></button></li>
+      </ul>
+    </nav>
+  </header>
 
   <form id="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <h2>Login as Patient</h2>
@@ -49,7 +61,7 @@ session_start();
 
     <p><input class="check-box" type="checkbox" name="remember" /> Remember me
     </p>
-    <input class="btn" type="submit" name="submit" value="Submit">
+    <input class="btn-sub" type="submit" name="submit" value="Submit">
     <div>
       <p>Don't have an account? <a href="./Registration.php">Sign up</a>.</p>
     </div>
