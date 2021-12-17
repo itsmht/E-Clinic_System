@@ -36,23 +36,23 @@
 
 
 
-  if ($name != "" and $email!= "" and $pass != "" and $gender != "") {
-    $jsonData = file_get_contents('../Model/StaffData.json');
-    $array_data = json_decode($jsonData, true);
-    $input = array(
-      'name'               =>     $name,
-      'email'          =>    $email,
-      'password'     =>     $pass,
-      'dob'          => $dob,
-      'gender'     =>     $gender,
+  // if ($name != "" and $email!= "" and $pass != "" and $gender != "") {
+  //   $jsonData = file_get_contents('../Model/StaffData.json');
+  //   $array_data = json_decode($jsonData, true);
+  //   $input = array(
+  //     'name'               =>     $name,
+  //     'email'          =>    $email,
+  //     'password'     =>     $pass,
+  //     'dob'          => $dob,
+  //     'gender'     =>     $gender,
 
-    );
+  //   );
 
-    $array_data[] = $input;
-    $final_data = json_encode($array_data);
-    file_put_contents('../Model/StaffData.json', $final_data);
-    //header("Location:Staff_login.php");
-    //echo $final_data;
+  //   $array_data[] = $input;
+  //   $final_data = json_encode($array_data);
+  //   file_put_contents('../Model/StaffData.json', $final_data);
+  //   //header("Location:Staff_login.php");
+  //   //echo $final_data;
   }
   // DatabaseMySQL
   $servername = "localhost";

@@ -180,6 +180,9 @@ require '../Controller/Staff_Profile_Check.php';
       ?>
   </div>
   </form>
+  <?php
+  require '../Controller/Staff_Update_Profile_Check.php';
+  ?>
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <div class="container2">
       <h1>Update Profile</h1>
