@@ -1,57 +1,66 @@
 <?php
   $nameErr = $emailErr = $genderErr = $passErr = "";
-  $info['email'] = "";
-  $info['password'] = "";
+  
+
+$email = $pass = "";
 
 
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["email"])) {
-      $emailErr = "Email is required";
-    } else {
-      $info['email'] = test_input($_POST["email"]);
-    }
-    if (empty($_POST["pass"])) {
-      $passErr = "Password is required";
-    } else {
-      $info['password'] = test_input($_POST["pass"]);
-    }
-
-
-    $data = file_get_contents("../Model/StaffData.json");
-    $data = json_decode($data, true);
-    $flag = 0;
-
-    foreach ($data as $row) {
-      if ($row["email"] == $info['email'] and  $row["password"] == $info['password']) {
-        if (isset($_POST['remember'])) {
-          setcookie("email", $info['email'], time() + (86400 * 30));
-          setcookie("password", $info['password'], time() + (86400 * 30));
-        }
-        $_SESSION["email"] = $info['email'];
-        $flag = 0;
-       header("Location:Staff_home.php");
-        break;
-      } else {
-        $flag = 1;
-      }
-    }
-
-    if ($flag == 1) {
-        echo "Wrong Info";
-      
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = $_POST["email"];
   }
-
-
-
-
-
-  function test_input($data)
-  {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+  if (empty($_POST["pass"])) {
+    $passErr = "pass is required";
+  } else {
+    $pass = $_POST["pass"];
   }
-  ?>
+}
+
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "e-clinic";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  } 
+
+  $sql = "SELECT  email, password FROM staff WHERE email = '$email' AND password = '$pass'";
+
+  $result = $conn->query($sql);
+
+
+  $row = $result->fetch_assoc();
+
+
+  if($row != NULL){
+    if (isset($_POST['remember'])) {
+      setcookie("email", $email, time() + (86400 * 30));
+      setcookie("password", $pass, time() + (86400 * 30));
+    }
+    // echo "Loged In";
+    $_SESSION["email"] = $email;
+   
+    header("Location:Staff_home.php");
+    
+  }else{
+
+
+$error = "Your Login Name or Password is invalid";
+
+}
+?>
+
+
+
+
+
+
+
+
