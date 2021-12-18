@@ -4,7 +4,7 @@ let button = document.querySelector('.btn');
 let error = document.querySelectorAll('.error');
 let err_msg = document.querySelectorAll('.err-msg');
 let success = document.querySelectorAll('.success');
-let f = 0;
+
 console.log(username);
 console.log(password);
 console.log(button);
@@ -20,7 +20,7 @@ button.addEventListener('click', (e) => {
         success[0].style.display = 'none';
         username.classList.add('border-color');
         err_msg[0].style.display = 'block';
-        f = 1;
+
     } else {
         success[0].style.display = 'block';
         error[0].style.display = 'none';
@@ -34,7 +34,7 @@ button.addEventListener('click', (e) => {
         success[1].style.display = 'none';
         password.classList.add('border-color');
         err_msg[1].style.display = 'block';
-        f = 1;
+
     } else {
         success[1].style.display = 'block';
         error[1].style.display = 'none';
