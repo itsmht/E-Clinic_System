@@ -25,7 +25,9 @@ session_start();
       </ul>
     </nav>
     <!-- <link rel="stylesheet" href="style3.css"> -->
-    
+    <?php
+    //nice
+    ?>
   </header>
 </head>
 
@@ -66,6 +68,7 @@ session_start();
 
 
       <button type="submit">Submit</button>
+      
       
     </div>
   </form>
