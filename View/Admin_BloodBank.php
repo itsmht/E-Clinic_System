@@ -25,7 +25,7 @@ $conn->close();
 <head>
 	
 	<title>E-Clinic System</title>
-  <link rel="stylesheet" href="./css-patient/table.css">
+  <link rel="stylesheet" href="./css_admin/style.css">
 </head>
 <body>
 

@@ -26,28 +26,33 @@ $conn->close();
 	<title>E-Clinic System</title>
 	
 </head>
-<link rel="stylesheet" href="./css-patient/table.css">
+<link rel="stylesheet" href="./css_admin/style.css">
 <body>
 	<h1 style= "text-align: center">E-Clinic System </h1><br>
 	
-  <table>
-  <tr>
-    <th>Equipment Description</th>
-    <th>Total Equipment</th>
-    <th>Unit Cost</th>
-    <th>Total Cost</th>
-  </tr>
-<?php foreach ($result as $item) { ?>
-  <tr>
-    <td><?php echo $item['description'] ?></td>
-    <td><?php echo $item['total'] ?></td>
-    <td><?php echo $item['unitcost'] ?></td>
-    <td><?php echo $item['total cost'] ?></td>
-    
-  </tr>
-  <?php } ?>
-  </table>
+  
  
  
+	<h2>Data loaded from database using ajax and jquery</h2>
+	<button id="load">Click</button>
+	<div id="main">
+	</div>
+	<script src="..\Controller\jquery.js"></script>
+  
+	<script>
+		$(document).ready(function(){
+			$("#load").on("click",function(e){
+				$.ajax({
+					url:"Admin_equipmentCheck.php",
+          
+					type:"POST",
+					success:function(data){
+						$("#main").html(data);
+					}
+				});
+			});
+	   });
+	</script>
+
 </body>
 </html> 

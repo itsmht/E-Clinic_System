@@ -27,7 +27,7 @@ $conn->close();
 	<title>E-Clinic System</title>
 	
 </head>
-<link rel="stylesheet" href="./css-patient/table.css">
+<link rel="stylesheet" href="./css_admin/style.css">
 <body>
 	<h1 style= "text-align: center">E-Clinic System profile</h1><br>
 	
