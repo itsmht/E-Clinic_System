@@ -7,6 +7,7 @@ session_start();
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="./css_staff/style5.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,119 +26,7 @@ session_start();
     background-color: #6a5f5f;
     border-radius: 30px;
   }*/
-  .navbar li {
-    float: left;
-    list-style: none;
-    margin: 13px 20px;
-  }
-
-  /*.navbar ul{
-    overflow: auto;
-}*/
-  .navbar {
-    position: absolute;
-    left: 0px;
-    height: 40px;
-    background-color: #2C64B4;
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar ul {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-  }
-
-  .navbar li a {
-    padding: 6px 6px;
-    text-decoration: none;
-    color: white;
-  }
-
-  .navbar input {
-    float: right;
-    color: white;
-    padding: 12px 75px;
-  }
-
-  .search {
-    border: 2px solid black;
-    border-radius: 14px;
-    padding: 0px 17px;
-    width: 129px;
-  }
-
-  .navbar li a:hover {
-    color: red
-  }
-
-  body {
-    background-image: url("./images/homebg.jpg");
-    background-repeat: no-repeat;
-    background-position: right top;
-
-  }
-
-  .container {
-    text-align: center;
-  }
-
-  form {
-
-    position: relative;
-    top: 40%;
-    left: 50%;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
-    transform: translate(50%, 30%);
-
-
-    padding: 48px;
-    background-color: #fff;
-    border: 1px solid #e3e3e3;
-    border-radius: 16px;
-    text-align: left;
-    font-family: Source Sans Pro;
-    border-radius: 4px;
-  }
-
-  input[type=text],
-  input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 6px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-  button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 12px;
-
-  }
-
-  button:hover {
-    opacity: 0.8;
-  }
-
-  .container2 {
-    padding: 16px;
-  }
-
-  .container3 {
-    text-align: center;
-  }
+  
   </style>
 </head>
 
@@ -149,7 +38,7 @@ require '../Controller/Staff_Profile_Check.php';
 ?>
 
 
-  <div class="container">
+<div class="container">
     <form>
       <h1>Profile</h1>
       <?php
@@ -180,11 +69,12 @@ require '../Controller/Staff_Profile_Check.php';
       ?>
   </div>
   </form>
-  <?php
-  require '../Controller/Staff_Update_Profile_Check.php';
-  ?>
+  
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <div class="container2">
+    <?php
+  require '../Controller/Staff_Update_Profile.php';
+  ?>
       <h1>Update Profile</h1>
 
       <label for="name"><b>Name</b></label>
@@ -202,6 +92,18 @@ require '../Controller/Staff_Profile_Check.php';
 
       <br><br>
       <button type="submit">Update</button>
+
+    </div>
+  </form>
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <div class="container4">
+    <?php
+ // require '../Controller/Staff_Update_Profile.php';
+  ?>
+      <h1>Profile Deletion</h1>
+
+      
+      <button type="submit">Delete Profile</button>
 
     </div>
   </form>

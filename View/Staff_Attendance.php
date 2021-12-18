@@ -16,8 +16,9 @@ session_start();
             <li><a href="Staff_home.php">Home</a></li>
         <li><a href="Staff_Profile.php">Profile</a></li>
         <li><a href="Staff_financials.php">Financials</a></li>
-        <li><a href="Staff_login.php">Logout</a></li>
         <li><a href="Staff_attendance.php">Attendance</a></li>
+        <li><a href="Staff_login.php">Logout</a></li>
+        
                 
             </ul>
         </nav>
@@ -27,17 +28,22 @@ session_start();
 <body>
   <form>
       <div class = "container3">
-          <h1>Welcome to Staff Portal</h1>
+          <h1>Attendance Area</h1>
 
       </div>
 </form>
-<form>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
       <div class = "container3">
-          <h1>Notice</h1>
-          <p> Nothing here for today. This site is still in development phase. Come back later!!!</p>
+          <?php
+          require '../Controller/Staff_attendance_Check.php';
+          ?>
+          <h1>Give Your Attendance Here</h1>
+          <button type="submit">Click Here</button>
 
       </div>
-</form>
+
+
+
 
 </body>
 </html>

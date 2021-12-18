@@ -1,7 +1,7 @@
 <?php
   $nameErr = $emailErr = $genderErr = $dobErr = $passErr = $addressErr = "";
-  $name = $email = $gender = $pass = $dob = $address = "";
-  require '../Controller/Staff_Profile_Check.php';
+  $name = $email = $dob = $pass = $gender =  "";
+  $semail = $_SESSION["email"];
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])) {
@@ -37,28 +37,13 @@
     } else {
       $dob = $_POST["dob"];
     }
-  }
+  
 
   // JSON
 
-  if ($name != "" and $email != "" and $pass != "" and $gender != "") {
-    $jsonData = file_get_contents('../Model/data.json');
-    $array_data = json_decode($jsonData, true);
-    $input = array(
-      'name'               =>     $name,
-      'e-mail'          =>    $email,
-      'password'     =>     $pass,
-      'gender'     =>     $gender,
-      'address'     =>     $address,
-      'dob'     =>     $dob,
+  
 
-    );
-
-    $array_data[] = $input;
-    $final_data = json_encode($array_data);
-    file_put_contents('../Model/data.json', $final_data);
-    // header("Location:login.php");
-    // echo $final_data;
+   
 
     // DatabaseMySQL
     $servername = "localhost";
@@ -75,14 +60,14 @@
       echo "OK";
     }
 
-    $sql = "UPDATE staff SET  name='$name', email='$email', password='$pass', dob='$dob', gender='$gender' WHERE email = '$semail' LIMIT 1";
+    $sql = "DELETE FROM staff WHERE email = '$semail' LIMIT 1";
     $_SESSION["email"] = $email;
     $result = $conn->query($sql);
-    header("Location:Staff_home.php");
+    header("Location:Staff_login.php");
     echo $sql;
 
     $conn->close();
-  }
+  }}
 
 
   ?>
