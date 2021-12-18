@@ -17,6 +17,8 @@ session_start();
         <li><a href="Staff_Profile.php">Profile</a></li>
         <li><a href="Staff_financials.php">Financials</a></li>
         <li><a href="Staff_attendance.php">Attendance</a></li>
+        <li><a href="Staff_shifts.php">Shift</a></li>
+        <li><a href="Staff_pathology.php">Pathology</a></li>
         <li><a href="Staff_login.php">Logout</a></li>
         
                 
