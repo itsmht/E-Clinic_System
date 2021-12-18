@@ -1,0 +1,90 @@
+.navbar li{
+    float:left;
+    list-style: none; 
+    margin: 13px 20px;
+}  
+
+.navbar {
+    position: absolute;
+    left: 0px;
+    height: 40px;
+    background-color: #2C64B4;
+    width: 100%;
+    text-align: center;
+}
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+.navbar li a{
+    padding: 6px 6px;
+    text-decoration: none;
+    color: white;
+}
+.navbar input{
+    float: right;
+    color: white;
+    padding: 12px 75px;
+}
+
+.navbar li a:hover{
+    color: red
+}
+body {
+    background-image: url("../images/adminbg.png");
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+  
+  }
+
+form{
+    
+    position: relative;
+    top: 40%;
+    left: 50%;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%,30%);
+    
+    
+    padding: 48px;
+    background-color: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 16px;
+    text-align: left;
+    font-family: Source Sans Pro;
+    border-radius: 4px;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  .container2 {
+    padding: 16px;
+  }
+  .container3{
+      text-align: center;
+  }

@@ -5,7 +5,7 @@
 	<title>E-Clinic System</title>
 	<head>
   <link rel="stylesheet" href="./css_admin/style1.css">
-  
+  <script src="https://kit.fontawesome.com/e8af05a135.js" crossorigin="anonymous"></script>
 <!DOCTYPE html> 
 </head>
 <body>
@@ -52,7 +52,7 @@
         <td> <input type="Password" name="pass" id="pass" placeholder="Password" required> </td>
  	</tr>
     <tr >
-        <td> <input type="submit" name="btnreg" id="reg" value="Register "> </td>
+        <td> <input class="btn" type="submit" name="btnreg" id="reg" value="Register "> </td>
  	</tr>
     
 	</table > 
