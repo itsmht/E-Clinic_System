@@ -39,10 +39,12 @@ session_start();
       
 
 
-        $salary = 15000;
+        $shift = "8 AM TO 8 PM";
+        $avail_shift = "8 PM TO 8 AM";
           echo "<h3>Name: $name </h3>";
           echo "<h3>Email: $email </h3>";
-          echo "<h3>Salary: $salary </h3>";
+          echo "<h3>Current Shift: $shift </h3>";
+          echo "<h3>Available Shift: $avail_shift </h3>";
           
           
 
@@ -58,9 +60,9 @@ session_start();
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <div class="container2">
       <?php
-    require '../Controller/Staff_salary_req.php';
+    require '../Controller/Staff_shift_req.php';
       ?>
-      <button type="request">Request Salary</button>
+      <button type="request">Change Shift</button>
   </div>
   </form>
 </body>

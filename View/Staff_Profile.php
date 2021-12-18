@@ -14,10 +14,13 @@ session_start();
   <title>Profile</title>
   <nav class="navbar">
     <ul>
-      <li><a href="Staff_home.php">Home</a></li>
-      <li><a href="Staff_Profile.php">Profile</a></li>
-      <li><a href="Staff_financials.php">Financials</a></li>
-      <li><a href="Staff_login.php">Logout</a></li>
+        <li><a href="Staff_home.php">Home</a></li>
+        <li><a href="Staff_Profile.php">Profile</a></li>
+        <li><a href="Staff_financials.php">Financials</a></li>
+        <li><a href="Staff_attendance.php">Attendance</a></li>
+        <li><a href="Staff_shifts.php">Shift</a></li>
+        <li><a href="Staff_pathology.php">Pathology</a></li>
+        <li><a href="Staff_login.php">Logout</a></li>
 
     </ul>
   </nav>
@@ -107,6 +110,20 @@ require '../Controller/Staff_Profile_Check.php';
 
     </div>
   </form>
+
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <div class="container4">
+    <?php
+  require '../Controller/Staff_resignation.php';
+  ?>
+      <h1>Resignation</h1>
+
+      
+      <button type="submit">Apply</button>
+
+    </div>
+  </form>
+
 </body>
 
 </html>
