@@ -21,31 +21,7 @@
     
 
 
-    // $data = file_get_contents("../Model/data.json");
-    // $data = json_decode($data, true);
-    // $flag = 0;
-
-    // foreach ($data as $row) {
-    //   if ($row["name"] == $name and  $row["password"] == $pass) {
-    //     if (isset($_POST['remember'])) {
-    //       setcookie("name", $name, time() + (86400 * 30));
-    //       setcookie("user_pass", $pass, time() + (86400 * 30));
-    //     }
-    //     // echo "Loged In";
-    //     $_SESSION["username"] = $name;
-    //     $flag = 0;
-    //     // header("Location:profile.php");
-    //     break;
-    //   } else {
-    //     $flag = 1;
-    //   }
-    // }
-
-
-    // if ($flag == 1) {
-    //   echo "Wrong Info";
-    // }
-
+    
     // DatabaseMySQL
     $servername = "localhost";
     $username = "root";

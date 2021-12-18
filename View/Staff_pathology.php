@@ -40,6 +40,10 @@ session_start();
   </form>
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     <div class="container">
+    <?php
+  require '../Controller/Staff_path_check.php';
+  ?>
+
       <h2>Patient Information</h2>
 
       <label for="patient_name"><b>Patient's Name</b></label>
@@ -68,13 +72,11 @@ session_start();
 
 
       <button type="submit">Submit</button>
+      <button type= "submit"><a href="./Staff_pathology_list.php">Full list</a></button>
       
       
     </div>
   </form>
-
-
-
 
 
   

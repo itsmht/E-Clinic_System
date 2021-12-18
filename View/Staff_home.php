@@ -19,7 +19,7 @@ session_start();
         <li><a href="Staff_financials.php">Financials</a></li>
         <li><a href="Staff_attendance.php">Attendance</a></li>
         <li><a href="Staff_shifts.php">Shift</a></li>
-        <li><a href="Staff_patholgy.php">Pathology</a></li>
+        <li><a href="Staff_pathology.php">Pathology</a></li>
         <li><a href="Staff_login.php">Logout</a></li>
       
 
@@ -45,7 +45,7 @@ session_start();
 	<button id="load">Click</button>
 	<div id="main">
 	</div>
-	<script src="jquery.js"></script>
+	<script src="..\Controller\jquery.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("#load").on("click",function(e){
