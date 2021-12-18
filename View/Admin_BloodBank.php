@@ -1,36 +1,61 @@
 <?php
 // Start the session
 session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "e_clinic";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM bloodgroup ";
+$result = $conn->query($sql);
+
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	
 	<title>E-Clinic System</title>
-	
+  <link rel="stylesheet" href="./css-patient/table.css">
 </head>
 <body>
-<h1 style= "text-align: center">E-Clinic System </h1><br>
 
-	<?php
-  $jsondata = file_get_contents("../Model/Admin_BloodBank.json");
-  $data = json_decode($jsondata, true);
-  $flag = 0;
- echo '<h2 style= "text-align: center">Blood Bank</h2>';
- $a="";
-  foreach ($data['Blood'] as $b) 
-  { 
-      $a.="Name: ".$b['name']."</br>";
-      $a.="Gender: ".$b['gender']."</br>";
-      $a.="Blood Group: ".$b['bloodGroup']."</br>";
-      $a.="Date of Birth: ".$b['dob']."</br>";
-      $a.="Address: ".$b['address']."</br>";
-      $a.="email: ".$b['email']."</br></br>";
-      
-  }
-  
-  echo $a;
-  ?>
+<h2 style= "text-align: center">Blood Bank</h2>
+<table>
+  <tr>
+    
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Date of Birth</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Blood Group</th>
+ 
+  </tr>
+<?php foreach ($result as $item) { ?>
+  <tr>
+    
+    <td><?php echo $item['name'] ?></td>
+    <td><?php echo $item['gender'] ?></td>
+    <td><?php echo $item['dob'] ?></td>
+    <td><?php echo $item['Address'] ?></td>
+    <td><?php echo $item['Email'] ?></td>
+    <td><?php echo $item['bg'] ?></td>
+
+  </tr>
+  <?php } ?>
+  </table>
+
+	
   
   </body>
   </html>
