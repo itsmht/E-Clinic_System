@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM ambulance ";
+$sql = "SELECT * FROM doctorroom ";
 $result = $conn->query($sql);
 
 
@@ -32,17 +32,17 @@ $conn->close();
 	
   <table>
   <tr>
-    <th>DriverName</th>
-    <th>AmulanceNo</th>
-    <th>Loacation</th>
-    <th>Type</th>
+    <th>Doctor Name</th>
+    <th>Apointment Day</th>
+    <th>Room No</th>
+    <th>Phone</th>
   </tr>
 <?php foreach ($result as $item) { ?>
   <tr>
-    <td><?php echo $item['DriverName'] ?></td>
-    <td><?php echo $item['AmulanceNo'] ?></td>
-    <td><?php echo $item['Loacation'] ?></td>
-    <td><?php echo $item['Type'] ?></td>
+    <td><?php echo $item['Doctor'] ?></td>
+    <td><?php echo $item['apointDay'] ?></td>
+    <td><?php echo $item['roomNo'] ?></td>
+    <td><?php echo $item['phone'] ?></td>
     
   </tr>
   <?php } ?>

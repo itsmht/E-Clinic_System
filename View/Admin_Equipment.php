@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM ambulance ";
+$sql = "SELECT * FROM equipment ";
 $result = $conn->query($sql);
 
 
@@ -32,17 +32,17 @@ $conn->close();
 	
   <table>
   <tr>
-    <th>DriverName</th>
-    <th>AmulanceNo</th>
-    <th>Loacation</th>
-    <th>Type</th>
+    <th>Equipment Description</th>
+    <th>Total Equipment</th>
+    <th>Unit Cost</th>
+    <th>Total Cost</th>
   </tr>
 <?php foreach ($result as $item) { ?>
   <tr>
-    <td><?php echo $item['DriverName'] ?></td>
-    <td><?php echo $item['AmulanceNo'] ?></td>
-    <td><?php echo $item['Loacation'] ?></td>
-    <td><?php echo $item['Type'] ?></td>
+    <td><?php echo $item['description'] ?></td>
+    <td><?php echo $item['total'] ?></td>
+    <td><?php echo $item['unitcost'] ?></td>
+    <td><?php echo $item['total cost'] ?></td>
     
   </tr>
   <?php } ?>
