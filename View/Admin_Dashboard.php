@@ -10,15 +10,16 @@ session_start();
     <header>
         <nav class="navbar">
             <ul>
-                <li><a href="Admin_Dashboard.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="Admin_Profile.php">Profile</a></li>   
-                <li><a href="">Bed status</a></li>
-                <li><a href="">Ambulance Details</a></li>
+                <li><a href="Admin_BedStatus.php">Bed status</a></li>
+                <li><a href="Admin_AmbulanceShow.php">Ambulance Details</a></li>
                 <li><a href="">Manage the Staff</a></li>
-                <li><a href="">Equipment report</a></li>
-                <li><a href="">Doctor’s room</a></li>
+                <li><a href="Admin_Equipment.php">Equipment report</a></li>
+                <li><a href="Admin_DoctorRoom.php">Doctor’s room</a></li>
+             
                 <li><a href="Admin_BloodBank.php">Blood Bank</a></li>
-                <li><a href="">Edit Profile</a></li>
+                <li><a href="Admin_EditProfile.php">Edit Profile</a></li>
                 <li><a href="Admin_login.php">Logout</a></li>
             </ul>
         </nav>
