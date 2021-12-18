@@ -33,8 +33,8 @@ $conn->close();
   
  
  
-	<h2>Data loaded from database using ajax and jquery</h2>
-	<button id="load">Click</button>
+	<h2>Data Show</h2>
+	<button class="btn" id="load">Load</button>
 	<div id="main">
 	</div>
 	<script src="..\Controller\jquery.js"></script>

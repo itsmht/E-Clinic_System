@@ -1,5 +1,11 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+      background-image: url("../images/adminbg1.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+    
+  
   }
   
   table,
@@ -9,6 +15,21 @@ body {
     text-align: left;
   }
   
+.btn {
+  background-color: #61bce6;
+  color: white;
+  padding: 14px 20px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 12px;
+
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
   a {
     text-decoration: none;
     color: #000;
